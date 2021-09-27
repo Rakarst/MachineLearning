@@ -1,3 +1,0 @@
-
-def gain(data,attr):
-    
