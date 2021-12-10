@@ -1,4 +1,4 @@
-function img_reshape =  reshape_image(name)
+function img_reshape = reshape_image(name)
 
 A = imread(name);
 A = imresize(A,0.25);
