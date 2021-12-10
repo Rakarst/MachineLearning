@@ -4,7 +4,7 @@ Type='mamdani'
 Version=2.0
 NumInputs=9
 NumOutputs=1
-NumRules=12
+NumRules=6
 AndMethod='min'
 OrMethod='max'
 ImpMethod='min'
@@ -14,63 +14,59 @@ DefuzzMethod='centroid'
 [Input1]
 Name='colorR'
 Range=[0 255]
-NumMFs=3
-MF1='low':'gaussmf',[80 0]
-MF2='medium':'gaussmf',[80 170]
-MF3='high':'gaussmf',[80 255]
+NumMFs=2
+MF1='low':'gaussmf',[170 0]
+MF2='high':'gaussmf',[170 255]
 
 [Input2]
 Name='colorG'
 Range=[0 255]
 NumMFs=3
-MF1='low':'gaussmf',[80 0]
-MF2='medium':'gaussmf',[80 170]
-MF3='high':'gaussmf',[80 255]
+MF1='low':'gaussmf',[100 0]
+MF2='medium':'gaussmf',[100 150]
+MF3='high':'gaussmf',[150 255]
 
 [Input3]
 Name='colorB'
 Range=[0 255]
-NumMFs=3
-MF1='low':'gaussmf',[80 0]
-MF2='medium':'gaussmf',[80 170]
-MF3='high':'gaussmf',[80 255]
+NumMFs=2
+MF1='low':'gaussmf',[65 0]
+MF2='high':'gaussmf',[65 255]
 
 [Input4]
 Name='entropyR'
 Range=[0 10]
 NumMFs=2
-MF1='low':'trapmf',[0 0 1 6.5]
-MF2='high':'trapmf',[5.5 9 11 19]
+MF1='low':'trapmf',[0 0 1 7.1]
+MF2='high':'trapmf',[7.1 9 11 19]
 
 [Input5]
 Name='entropyG'
 Range=[0 10]
 NumMFs=2
-MF1='low':'trapmf',[0 0 1 7.5]
-MF2='high':'trapmf',[6.5 9 11 19]
+MF1='low':'trapmf',[0 0 1 7.2]
+MF2='high':'trapmf',[7.2 9 11 19]
 
 [Input6]
 Name='entropyB'
 Range=[0 10]
 NumMFs=2
-MF1='low':'trapmf',[0 0 1 6.5]
-MF2='high':'trapmf',[5.5 9 11 19]
+MF1='low':'trapmf',[0 0 1 5.6]
+MF2='high':'trapmf',[5.6 9 11 19]
 
 [Input7]
 Name='G-R'
 Range=[0 255]
-NumMFs=3
-MF1='low':'gaussmf',[30 0]
-MF2='medium':'gaussmf',[30 80]
-MF3='high':'gaussmf',[30 255]
+NumMFs=2
+MF1='low':'gaussmf',[60 0]
+MF2='high':'gaussmf',[60 255]
 
 [Input8]
 Name='R-B'
 Range=[0 255]
-NumMFs=3
-MF1='low':'gaussmf',[30 0]
-MF2='medium':'gaussmf',[30 80]
-MF3='high':'gaussmf',[30 255]
+NumMFs=2
+MF1='low':'gaussmf',[105 0]
+MF2='high':'gaussmf',[105 255]
 
 [Input9]
 Name='G-B'
@@ -92,15 +88,9 @@ MF5='light_red':'trimf',[4 5 6]
 MF6='red':'trimf',[5 6 7]
 
 [Rules]
-2 3 2 2 2 1 3 2 3, 1 (1) : 1
-2 3 2 0 0 0 1 2 3, 1 (1) : 1
-2 2 1 0 0 0 2 2 3, 2 (1) : 1
-3 2 2 0 0 0 3 3 2, 3 (1) : 1
-3 2 1 0 0 0 2 3 2, 4 (1) : 1
-1 1 1 0 0 0 1 1 1, 5 (1) : 1
-2 1 1 0 0 0 3 3 1, 6 (1) : 1
-2 1 1 1 1 2 3 3 1, 6 (1) : 1
-2 2 1 2 1 1 2 2 3, 2 (1) : 1
-3 2 2 2 2 2 3 3 2, 3 (1) : 1
-3 2 1 2 2 1 2 3 2, 4 (1) : 1
-1 1 1 1 1 1 1 1 2, 5 (1) : 1
+2 3 1 0 0 0 1 2 3, 1 (1) : 1
+1 3 1 0 0 0 1 2 3, 2 (1) : 1
+2 2 1 0 0 0 1 2 2, 3 (1) : 1
+2 2 1 0 0 0 2 2 2, 4 (1) : 1
+2 1 2 0 0 0 2 1 1, 5 (1) : 1
+1 1 2 0 0 0 2 1 1, 6 (1) : 1
