@@ -9,10 +9,11 @@ function features = extract_image_features(class_number)
     
     for i = 1:number_of_files
         file_name = fullfile(path, files(i).name);
+        %image = imread(file_name);
+        image = reshape_image(file_name);
         for j = 1:3
-            image = imread(file_name);
             layer = image(:,:,j);
-            filtered = layer(layer>30);
+            filtered = layer(layer>0);
             features(i,j) = mean(filtered);
             features(i,j+3) = entropy(filtered);
         end
