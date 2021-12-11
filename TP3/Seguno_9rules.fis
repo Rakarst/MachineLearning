@@ -1,0 +1,61 @@
+[System]
+Name='Seguno_9rules'
+Type='sugeno'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=6
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='G-R'
+Range=[0 255]
+NumMFs=6
+MF1='mf1':'trimf',[-67.1 0.786 20.7558139534884]
+MF2='mf2':'trimf',[8.36 27.2251585623679 47.2]
+MF3='mf3':'trimf',[38 54.1807610993657 66]
+MF4='mf4':'trimf',[55.83911205074 69.23911205074 82.21911205074]
+MF5='mf5':'trimf',[73.1737843551797 85.4537843551797 107.77378435518]
+MF6='mf6':'trimf',[79.5 108.091966173361 256]
+
+[Input2]
+Name='R-B'
+Range=[0 255]
+NumMFs=3
+MF1='mf1':'trimf',[-103.5 26.66 180.9]
+MF2='mf2':'trapmf',[50.3661733615222 82.9661733615222 93.9661733615222 115.966173361522]
+MF3='mf3':'trimf',[42.3 197.5 400.7]
+
+[Input3]
+Name='G-B'
+Range=[0 255]
+NumMFs=6
+MF1='mf1':'trimf',[-26.1 5.66067653276954 25]
+MF2='mf2':'trimf',[6.73890063424946 21 33.7]
+MF3='mf3':'trimf',[30 45 55]
+MF4='mf4':'trimf',[51.9044397463002 63.9044397463002 84.4044397463002]
+MF5='mf5':'trimf',[73.5917758985201 91.3817758985201 115.02177589852]
+MF6='mf6':'trimf',[98.9217758985201 114.92177589852 198.92177589852]
+
+[Output1]
+Name='output1'
+Range=[0 6]
+NumMFs=6
+MF1='Class_1':'constant',[1]
+MF2='Class_2':'constant',[2]
+MF3='Class_3':'constant',[3]
+MF4='Class_4':'constant',[4]
+MF5='Class_5':'constant',[5]
+MF6='Class_6':'constant',[6]
+
+[Rules]
+1 0 6, 1 (1) : 2
+2 0 5, 2 (1) : 2
+3 0 4, 3 (1) : 2
+4 0 3, 4 (1) : 2
+5 0 2, 5 (1) : 2
+6 0 1, 6 (1) : 2
